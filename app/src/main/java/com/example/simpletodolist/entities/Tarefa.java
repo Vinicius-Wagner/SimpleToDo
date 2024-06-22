@@ -9,6 +9,7 @@ public class Tarefa {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
+    private String tipo;
     private String titulo;
     private String descricao;
     private Date data;
