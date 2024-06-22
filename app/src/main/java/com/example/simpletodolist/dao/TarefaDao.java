@@ -21,5 +21,6 @@ public interface TarefaDao {
     @Query("DELETE FROM Tarefa WHERE id = :idTarefa")
     void deletarTarefa(int idTarefa);
 
+
     // Outros métodos de consulta ou atualização podem ser adicionados conforme necessário
 }

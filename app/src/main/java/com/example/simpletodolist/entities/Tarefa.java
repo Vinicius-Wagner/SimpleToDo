@@ -3,28 +3,32 @@ package com.example.simpletodolist.entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import java.util.Date;
+
 @Entity
 public class Tarefa {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    private String tipo;
     private String titulo;
     private String descricao;
     private Date data;
     private String hora;
     private String imagem; // Supondo que 'imagem' seja um caminho para a imagem
-    private String localizacao;
+    private String tipo;
     private String status;
+    private String localizacao;
 
     // Construtor
-    public Tarefa(String titulo, String descricao, Date data, String hora, String imagem) {
+    public Tarefa(String titulo, String descricao, Date data, String hora, String imagem, String tipo, String status, String localizacao) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;
         this.hora = hora;
         this.imagem = imagem;
+        this.tipo = tipo;
+        this.status = status;
+        this.localizacao = localizacao;
     }
 
     // Getters e Setters
@@ -75,5 +79,29 @@ public class Tarefa {
 
     public void setImagem(String imagem) {
         this.imagem = imagem;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 }

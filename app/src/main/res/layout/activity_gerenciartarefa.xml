@@ -164,5 +164,26 @@
         android:text="Atualizar"
         app:layout_constraintStart_toEndOf="@+id/buttonExcluirTarefa"
         app:layout_constraintTop_toBottomOf="@+id/calendarioTarefa" />
+    <TextView
+        android:id="@+id/textLocalizacaoTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:text="Localização da Tarefa:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStatusTarefa" />
+
+    <EditText
+        android:id="@+id/editLocalizacaoTarefa"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Localização"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLocalizacaoTarefa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
