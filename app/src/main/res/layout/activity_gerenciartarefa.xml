@@ -132,6 +132,7 @@
         android:layout_width="173dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
+        android:entries="@array/status_array"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 

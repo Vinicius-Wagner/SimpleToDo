@@ -41,8 +41,20 @@
         android:id="@+id/buttonGerenciarTarefa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="53dp"
         android:text="Gerenciar Tarefas"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="593dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewTarefas" />
+
+    <Button
+        android:id="@+id/buttonBuscarPorTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="51dp"
+        android:text="Buscar"
+        app:layout_constraintStart_toEndOf="@+id/editTipoTarefaBuscar"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

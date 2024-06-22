@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SimpleToDoList</string>
+
+    <string-array name="status_array">
+        <item>To do</item>
+        <item>Doing</item>
+        <item>Done</item>
+    </string-array>
 </resources>

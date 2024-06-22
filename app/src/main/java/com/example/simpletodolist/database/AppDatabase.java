@@ -11,7 +11,7 @@ import com.example.simpletodolist.dao.UsuarioDao;
 import com.example.simpletodolist.entities.Tarefa;
 import com.example.simpletodolist.entities.Usuario;
 
-@Database(entities = {Usuario.class, Tarefa.class}, version = 1)
+@Database(entities = {Usuario.class, Tarefa.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UsuarioDao usuarioDao();

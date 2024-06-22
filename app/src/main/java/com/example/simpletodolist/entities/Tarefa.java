@@ -1,9 +1,14 @@
 package com.example.simpletodolist.entities;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import java.util.Date;
+import androidx.room.TypeConverters;
 
+import com.example.simpletodolist.activities.ConversorData;
+
+@TypeConverters(ConversorData.class) // Adiciona o conversor de tipos
 @Entity
 public class Tarefa {
 
@@ -12,7 +17,8 @@ public class Tarefa {
 
     private String titulo;
     private String descricao;
-    private Date data;
+    @ColumnInfo(name = "data")
+    private Date data; // Agora suportado pelo Type Converter
     private String hora;
     private String imagem; // Supondo que 'imagem' seja um caminho para a imagem
     private String tipo;
@@ -103,5 +109,17 @@ public class Tarefa {
 
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public String toString() {
+        return "Tarefa{" +
+                "titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", data=" + data +
+                ", hora='" + hora + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", status='" + status + '\'' +
+                ", localizacao='" + localizacao + '\'' +
+                '}';
     }
 }
