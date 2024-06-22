@@ -14,6 +14,8 @@ public class Tarefa {
     private Date data;
     private String hora;
     private String imagem; // Supondo que 'imagem' seja um caminho para a imagem
+    private String localizacao;
+    private String status;
 
     // Construtor
     public Tarefa(String titulo, String descricao, Date data, String hora, String imagem) {
