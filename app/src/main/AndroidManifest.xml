@@ -25,6 +25,9 @@
             android:name=".activities.TelaPrincipal"
             android:exported="false"
             android:label="TelaPrincipal"/>
+        <activity android:name=".activities.GerenciarTarefaActivity"
+            android:exported="false"
+            android:label="GerenciarTarefa" />
     </application>
 
 </manifest>
