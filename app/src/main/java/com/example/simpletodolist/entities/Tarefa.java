@@ -5,12 +5,12 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 import androidx.room.TypeConverters;
-
+import java.io.Serializable;
 import com.example.simpletodolist.activities.ConversorData;
 
 @TypeConverters(ConversorData.class) // Adiciona o conversor de tipos
 @Entity
-public class Tarefa {
+public class Tarefa implements Serializable{
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -112,14 +112,6 @@ public class Tarefa {
     }
 
     public String toString() {
-        return "Tarefa{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", data=" + data +
-                ", hora='" + hora + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", status='" + status + '\'' +
-                ", localizacao='" + localizacao + '\'' +
-                '}';
+        return titulo + ", " + descricao + ", " + tipo;
     }
 }

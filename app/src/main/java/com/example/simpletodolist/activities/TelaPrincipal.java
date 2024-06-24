@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ public class TelaPrincipal extends AppCompatActivity {
     private ListView listViewTarefas;
     private List<Tarefa> tarefaList;
     private AppDatabase db;
+    private EditText editTipoTarefaBuscar;
+    private Button buttonBuscarPorTipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,20 @@ public class TelaPrincipal extends AppCompatActivity {
 
         db = AppDatabase.getDatabase(this);
 
+        editTipoTarefaBuscar = findViewById(R.id.editTipoTarefaBuscar);
+        buttonBuscarPorTipo = findViewById(R.id.buttonBuscarPorTipo);
+
         listViewTarefas = findViewById(R.id.listViewTarefas);
+        listViewTarefas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Tarefa tarefa = tarefaList.get(position);
+                Intent intent = new Intent(TelaPrincipal.this, DetalheTarefaActivity.class);
+                intent.putExtra("TAREFA", tarefa);
+                startActivity(intent);
+            }
+        });
+
         Button buttonGerenciarTarefa = findViewById(R.id.buttonGerenciarTarefa);
         buttonGerenciarTarefa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,17 +53,14 @@ public class TelaPrincipal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /*
-        listViewTarefas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        buttonBuscarPorTipo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Tarefa tarefa = tarefaList.get(position);
-                // Aqui você pode adicionar uma ação ao clicar em uma tarefa, como abrir uma nova atividade para ver detalhes
-                Intent intent = new Intent(TelaPrincipal.this, DetalhesTarefaActivity.class);
-                intent.putExtra("TAREFA_ID", tarefa.getId());
-                startActivity(intent);
+            public void onClick(View v) {
+                String tipoTarefa = editTipoTarefaBuscar.getText().toString().trim();
+                carregarTarefasPorTipo(tipoTarefa);
             }
-        });*/
+        });
     }
 
     @Override
@@ -56,11 +69,27 @@ public class TelaPrincipal extends AppCompatActivity {
         carregarTarefas();
     }
 
-    private void carregarTarefas() {
+    void carregarTarefas() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 tarefaList = db.tarefaDao().listarTarefas();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ArrayAdapter<Tarefa> adapter = new ArrayAdapter<>(TelaPrincipal.this, android.R.layout.simple_list_item_1, tarefaList);
+                        listViewTarefas.setAdapter(adapter);
+                    }
+                });
+            }
+        }).start();
+    }
+
+    void carregarTarefasPorTipo(final String tipo) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                tarefaList = db.tarefaDao().listarTarefasPorTipo(tipo);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

@@ -38,15 +38,15 @@ public class GerenciarTarefaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gerenciartarefa);
 
-        editTituloTarefa = findViewById(R.id.editTituloTarefa);
-        editDescricaoTarefa = findViewById(R.id.editDescricaoTarefa);
-        calendarioTarefa = findViewById(R.id.calendarioTarefa);
-        editHoraTarefa = findViewById(R.id.editHoraTarefa);
-        editTipoTarefa = findViewById(R.id.editTipoTarefa);
-        editLocalizacaoTarefa = findViewById(R.id.editLocalizacaoTarefa);
+        editTituloTarefa = findViewById(R.id.editTituloTarefaDetalhe);
+        editDescricaoTarefa = findViewById(R.id.editDescricaoTarefaDetalhe);
+        calendarioTarefa = findViewById(R.id.calendarioTarefaDetalhe);
+        editHoraTarefa = findViewById(R.id.editHoraTarefaDetalhe);
+        editTipoTarefa = findViewById(R.id.editTipoTarefaDetalhe);
+        editLocalizacaoTarefa = findViewById(R.id.editLocalizacaoTarefaDetalhe);
         buttonAdicionarTarefa = findViewById(R.id.buttonAdicionarTarefa);
 
-        spinnerStatusTarefa = findViewById(R.id.spinnerStatusTarefa);
+        spinnerStatusTarefa = findViewById(R.id.spinnerStatusTarefaDetalhe);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.status_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

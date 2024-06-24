@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activities.DetalheTarefaActivity">
+
+    <EditText
+        android:id="@+id/editTituloTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título" />
+
+    <EditText
+        android:id="@+id/editDescricaoTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição" />
+
+    <CalendarView
+        android:id="@+id/calendarioTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editHoraTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora" />
+
+    <EditText
+        android:id="@+id/editTipoTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo" />
+
+    <Spinner
+        android:id="@+id/spinnerStatusTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editLocalizacaoTarefaDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Localização" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonSalvarTarefa"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Salvar" />
+
+        <Button
+            android:id="@+id/buttonExcluirTarefa"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Excluir" />
+
+        <Button
+            android:id="@+id/buttonAbrirLocalizacao"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Abrir no Google Maps" />
+
+    </LinearLayout>
+
+</LinearLayout>
