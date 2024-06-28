@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,14 +32,23 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         emailEditText = findViewById(R.id.email);
         senhaEditText = findViewById(R.id.senha);
         Button btnLogin = findViewById(R.id.btnLogin);
+        Button btnCadastrar = findViewById(R.id.btnCadastrar);
 
         // Inicializando o banco de dados
         db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "app_database")
                 .allowMainThreadQueries()
                 .build();
+
+
+        btnCadastrar.setOnClickListener(View -> {
+            Intent intent = new Intent(LoginActivity.this, CadastraUsuarioActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         btnLogin.setOnClickListener(view -> {
             String email = emailEditText.getText().toString().trim();
