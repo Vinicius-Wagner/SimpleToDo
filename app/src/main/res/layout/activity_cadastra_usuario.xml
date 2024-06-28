@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -18,7 +19,9 @@
         <EditText
             android:id="@+id/editTextNome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:hint="Nome"
             android:inputType="text" />
 
         <TextView
@@ -29,7 +32,9 @@
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:hint="Email"
             android:inputType="textEmailAddress" />
 
         <TextView
@@ -40,13 +45,16 @@
         <EditText
             android:id="@+id/editTextSenha"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:hint="Senha"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/buttonCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonBackground"
             android:text="Cadastrar" />
 
     </LinearLayout>

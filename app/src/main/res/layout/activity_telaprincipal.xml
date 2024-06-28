@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textTelaPrincipal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/textView2"
@@ -22,15 +23,18 @@
         android:layout_height="400dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="47dp"
+        android:background="@color/buttonBackground"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTipoTarefaBuscar" />
 
     <EditText
         android:id="@+id/editTipoTarefaBuscar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Casa, Trabalho, Estudo"
         android:inputType="text"
@@ -43,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
         android:layout_marginTop="53dp"
+        android:backgroundTint="@color/buttonBackground"
         android:text="Gerenciar Tarefas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listViewTarefas" />
@@ -53,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="58dp"
         android:layout_marginTop="51dp"
+        android:backgroundTint="@color/buttonBackground"
         android:text="Buscar"
         app:layout_constraintStart_toEndOf="@+id/editTipoTarefaBuscar"
         app:layout_constraintTop_toTopOf="parent" />

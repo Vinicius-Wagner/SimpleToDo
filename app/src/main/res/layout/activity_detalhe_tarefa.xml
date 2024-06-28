@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".activities.DetalheTarefaActivity">
@@ -11,40 +12,54 @@
         android:id="@+id/editTituloTarefaDetalhe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:hint="Título" />
 
     <EditText
         android:id="@+id/editDescricaoTarefaDetalhe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:hint="Descrição" />
 
     <CalendarView
         android:id="@+id/calendarioTarefaDetalhe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white" />
 
     <EditText
         android:id="@+id/editHoraTarefaDetalhe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:hint="Hora" />
 
     <EditText
         android:id="@+id/editTipoTarefaDetalhe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:hint="Tipo" />
 
     <Spinner
         android:id="@+id/spinnerStatusTarefaDetalhe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white" />
 
     <EditText
         android:id="@+id/editLocalizacaoTarefaDetalhe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:hint="Localização" />
 
     <LinearLayout
@@ -55,22 +70,29 @@
         <Button
             android:id="@+id/buttonSalvarTarefa"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonBackground"
             android:text="Salvar" />
 
         <Button
             android:id="@+id/buttonExcluirTarefa"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Excluir" />
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="Excluir"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/buttonAbrirLocalizacao"
             android:layout_width="106dp"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/buttonBackground"
             android:text="Abrir no Google Maps" />
 
     </LinearLayout>
